@@ -41,7 +41,9 @@ const checkPalindrome = function(str){
   let revStr = strArr.join("");
   return (str === revStr ? `${str} it is a palindrome` : `${str} is not a palindrome`);
 }
-console.log(checkPalindrome(str));
+console.log(`Answer for 4th problem is ${checkPalindrome(str)}`);
+
+// 5. Write a JavaScript program to reverse a string without using the built-in reverse () method.
 
 const reverseString = function(str){
   let strArr = str.split("");
@@ -64,3 +66,47 @@ const productOfSign = function(numOne,numTwo,numThree){
   }
 }
 productOfSign(3,-7,2);
+
+// 7. Write a JavaScript program to remove items from a drop-down list.
+const selectedElement = document.getElementById('colorSelect');
+
+const removecolor = function(){
+  console.log(selectedElement.options);
+  selectedElement.remove(selectedElement.selectedIndex)
+}
+
+// 8. Write a JavaScript conditional statement to sort three numbers. Display an alert box to show the results.
+
+const numOne = 0, numTwo = -1, numThree = 4;
+
+const sortNumbers = function(numOne,numTwo,numThree){
+  let arr = [];
+  if(numOne > numTwo && numOne > numThree){
+    arr.push(numOne);
+    (numThree > numTwo) ? arr.push(numThree,numTwo) : arr.push(numTwo,numThree);
+  }else if(numTwo > numOne && numTwo > numThree){
+    arr.push(numTwo);
+    (numOne > numTwo) ? arr.push(numOne,numTwo) : arr.push(numTwo,numOne);
+  }else{
+    arr.push(numThree);
+    (numOne > numTwo) ? arr.push(numOne,numTwo) : arr.push(numTwo,numOne);
+  }
+  return arr;
+}
+
+alert(`Answer to sort three numbers ${sortNumbers(numOne,numTwo,numThree)}`);
+
+// 9. Write a JavaScript function that returns a string that has letters in alphabetical order.
+
+const sortAlpha = function(str){
+  return str.split('').sort().join('');
+}
+
+console.log(`Answer for 9th problems is --> ${sortAlpha('webmaster')}`)
+
+// 10. Write a JavaScript program that adds a keydown event listener to a text input to detect when the &quot;Enter key&quot; is pressed.
+
+const userInput = document.getElementById('text-input');
+userInput.addEventListener('keydown',()=>{
+  console.log('Anser for 10th problem --> Input keydown event happens here!!!')
+})
